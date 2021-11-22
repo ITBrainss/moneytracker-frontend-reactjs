@@ -1,0 +1,107 @@
+@import src/styles/variables
+
+.root
+  position: relative
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  background: #F2F2F2
+  user-select: none
+
+.container
+  height: 650px
+  border: 1px solid #F1F1F5
+  border-radius: 50px
+  box-shadow: 3px -5px 40px rgba(205, 205, 212, 0.1)
+
+  &__left
+    border-top-left-radius: 50px
+    border-bottom-left-radius: 50px
+    padding: 60px 50px 90px
+    background: #FAFAFB
+
+  &__right
+    border-top-right-radius: 50px
+    border-bottom-right-radius: 50px
+    padding: 60px 60px 50px
+    background: white
+
+.leftContainer
+  &__header
+    position: relative
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__body
+    position: relative
+    display: flex
+    flex-direction: column
+    padding: 60px 10px 0
+
+  &__promotion
+    position: relative
+    color: #171725
+    font-size: 24px
+    letter-spacing: 0.1px
+    font-weight: 600
+    text-align: center
+    margin-top: 70px
+    text-transform: capitalize
+
+.rightContainer
+  &__header
+    position: relative
+    color: #171725
+    font-size: 28px
+    font-weight: 600
+    letter-spacing: 0.12px
+    text-transform: capitalize
+
+  &__body
+    position: relative
+    padding-top: 34px
+
+  &__form
+    position: relative
+
+  &__forgot
+    color: #50B5FF
+    text-decoration: none
+    text-transform: capitalize
+    letter-spacing: 0.1px
+    font-size: 14px
+    font-weight: 500
+    transition: all .3s cubic-bezier(.4,0,.2,1)
+
+    &:hover
+      color: #185dc4
+
+  &__instant
+    position: relative
+    width: 100%
+    text-align: center
+    text-transform: capitalize
+    color: #B5B5BE
+    font-size: 14px
+    font-weight: 400
+    z-index: 2
+
+    &:before, &:after
+      display: block
+      position: absolute
+      width: 35%
+      height: 1px
+      content: ''
+      top: 50%
+      richness:
+      border-top: 1px dashed #E2E2EA
+      z-index: 1
+
+    &:before
+      right: 65%
+
+    &:after
+      left: 65%
