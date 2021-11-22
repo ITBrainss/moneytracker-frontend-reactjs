@@ -1,0 +1,15 @@
+{
+  "auth": {
+    "login": "Login",
+    "loginText": "log in to your account",
+    "createAccount": "create account",
+    "promotion": "monitoring your sales anytime. easier & effective than before",
+    "email": "email",
+    "password": "password",
+    "remember": "remember me",
+    "forgot": "forgot password?",
+    "instantLogin": "instant login",
+    "withGoogle": "Continue with Google",
+    "withFb": "Continue with Facebook"
+  }
+}

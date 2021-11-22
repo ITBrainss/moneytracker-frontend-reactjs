@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Suspense} from 'react'
+import {Redirect, Route, Switch} from 'react-router'
+
+const AuthPage = React.lazy(() => import('./pages/AuthPage').then(({AuthPage}) => ({default: AuthPage})))
+
+const StrictRoute = ({component: Component, ...rest}) => {
+  const token = localStorage.getItem('token')
+  console.log(token)
+  return (
+    <Route {...rest} render={props => (
+      token ? <Component {...props} /> : <Redirect to="/login"/>
+    )}/>
+  )
+}
+
+const StrictRoutes = () => {
+  const token = localStorage.getItem('token')
+
+  React.useEffect(() => {
+    if (token) {
+      // TODO
+    }
+  }, [token])
+
+  return (
+    <Switch>
+      <StrictRoute exact path="/" component={() => <div>Not found</div>}/>
+    </Switch>
+  )
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Suspense fallback={<>Loading..</>}>
+      <Switch>
+        <Route exact path="/login" component={AuthPage}/>
+        <StrictRoutes/>
+      </Switch>
+    </Suspense>
+
+  )
 }
 
-export default App;
+export default App
