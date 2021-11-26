@@ -11,6 +11,8 @@ import store from './store/index.js'
 import './helpers/i18n'
 import history from './helpers/history'
 import {createTheme, ThemeProvider} from '@material-ui/core'
+import {SnackbarProvider} from 'notistack'
+import {SnackbarUtilsConfigurator} from './helpers/notistack'
 
 const theme = createTheme({
   // TODO add properties
@@ -20,7 +22,10 @@ ReactDOM.render(
   <ReduxProvider store={store}>
     <Router history={history}>
       <ThemeProvider theme={theme}>
-        <App/>
+        <SnackbarProvider maxSnack={5}>
+          <SnackbarUtilsConfigurator/>
+          <App/>
+        </SnackbarProvider>
       </ThemeProvider>
     </Router>
   </ReduxProvider>,

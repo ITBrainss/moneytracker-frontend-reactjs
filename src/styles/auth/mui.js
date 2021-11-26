@@ -4,7 +4,7 @@ export const useStyles = makeStyles(theme => ({
   btnReg: {
     width: 160,
     height: 50,
-    color: 'blue',
+    color: '#007FFF',
     background: 'white',
     textTransform: 'capitalize',
     borderRadius: 10,
@@ -23,7 +23,7 @@ export const useStyles = makeStyles(theme => ({
       marginRight: 11
     }
   },
-  btnLogin: {
+  btnAuth: {
     background: '#007FFF',
     transition: 'all .3s cubic-bezier(.4,0,.2,1)',
     '&:hover': {

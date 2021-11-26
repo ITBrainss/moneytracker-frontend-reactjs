@@ -16,21 +16,20 @@
   box-shadow: 3px -5px 40px rgba(205, 205, 212, 0.1)
 
   &__left
-    border-top-left-radius: 50px
-    border-bottom-left-radius: 50px
     padding: 60px 50px 90px
-    background: #FAFAFB
 
   &__right
-    border-top-right-radius: 50px
-    border-bottom-right-radius: 50px
     padding: 60px 60px 50px
-    background: white
 
 .leftContainer
+  border-top-left-radius: 50px
+  border-bottom-left-radius: 50px
+  background: #FAFAFB
+
   &__header
     position: relative
     width: 100%
+    min-height: 50px
     display: flex
     align-items: center
     justify-content: space-between
@@ -38,8 +37,22 @@
   &__body
     position: relative
     display: flex
+    align-items: center
     flex-direction: column
     padding: 60px 10px 0
+
+  &__alreadyHave
+    position: relative
+    color: #171725
+    font-size: 14px
+    font-weight: 600
+    text-transform: capitalize
+
+    & span
+      text-decoration: none
+      color: #50B5FF
+      margin-left: 8px
+      cursor: pointer
 
   &__promotion
     position: relative
@@ -52,6 +65,10 @@
     text-transform: capitalize
 
 .rightContainer
+  border-top-right-radius: 50px
+  border-bottom-right-radius: 50px
+  background: white
+
   &__header
     position: relative
     color: #171725
@@ -63,9 +80,6 @@
   &__body
     position: relative
     padding-top: 34px
-
-  &__form
-    position: relative
 
   &__forgot
     color: #50B5FF
@@ -105,3 +119,5 @@
 
     &:after
       left: 65%
+
+

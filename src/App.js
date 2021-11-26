@@ -1,11 +1,12 @@
 import React, {Suspense} from 'react'
 import {Redirect, Route, Switch} from 'react-router'
+import {PageLoader} from './components/PageLoader'
 
 const AuthPage = React.lazy(() => import('./pages/AuthPage').then(({AuthPage}) => ({default: AuthPage})))
 
 const StrictRoute = ({component: Component, ...rest}) => {
   const token = localStorage.getItem('token')
-  console.log(token)
+
   return (
     <Route {...rest} render={props => (
       token ? <Component {...props} /> : <Redirect to="/login"/>
@@ -31,7 +32,7 @@ const StrictRoutes = () => {
 
 function App() {
   return (
-    <Suspense fallback={<>Loading..</>}>
+    <Suspense fallback={<PageLoader/>}>
       <Switch>
         <Route exact path="/login" component={AuthPage}/>
         <StrictRoutes/>
