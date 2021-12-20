@@ -1,0 +1,53 @@
+.sidebar
+  position: relative
+  transition: all 0.4s ease-in-out
+
+  &_fold
+    width: 4%
+
+  &_expand
+    width: 15%
+
+  &__container
+    position: relative
+    padding: 20px
+    width: 100%
+
+  &__arrow
+    position: absolute
+    display: grid
+    place-items: center
+    width: 30px
+    height: 30px
+    right: -25px
+    top: 50%
+    z-index: 9999
+    background: white
+    color: gray
+    border-top-right-radius: 10px
+    border-bottom-right-radius: 10px
+
+  &__arrow svg
+    transition: all 0.4s ease-in-out
+
+  &__arrow:hover svg
+    color: #007FFF
+
+  &__logo
+    position: relative
+    width: auto
+    height: 25px
+    margin-bottom: 20px
+
+  &__item
+    position: relative
+    width: auto
+
+  &__item:not(:last-child)
+    margin-bottom: 10px
+
+.sidebar_fold .sidebar__arrow svg
+  transform: rotate(180deg)
+
+.sidebar_expand .sidebar__arrow svg
+  transform: rotate(0deg)

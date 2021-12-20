@@ -7,7 +7,7 @@ export const TextFieldCustom = props => {
   const mui = useStyles()
 
   const {
-    name, type, icon, value, onChange
+    name, type, icon, value, onChange, error
   } = props
 
   return (
@@ -19,9 +19,10 @@ export const TextFieldCustom = props => {
       value={value}
       onChange={onChange}
       fullWidth
+      error={error}
+      variant="outlined"
       InputProps={{
-        disableUnderline: true,
-        endAdornment: <InputAdornment position="end">{icon}</InputAdornment>
+        endAdornment: <InputAdornment position="end">{icon || ''}</InputAdornment>
       }}
       {...props}
     />

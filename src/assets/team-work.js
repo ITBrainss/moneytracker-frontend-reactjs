@@ -1,5 +1,5 @@
 const TeamWorkSvg = (
-  <svg width="414" height="252" viewBox="0 0 414 252" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 414 252" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M158.027 28.8718C175.31 28.8718 189.32 42.9221 189.32 60.2541V75.0038H116.095C98.8129 75.0038 84.8027 60.9534 84.8027 43.6215V28.8718H158.027Z"
       fill="url(#paint0_linear_0_275)"/>

@@ -1,6 +1,6 @@
 {
     "code": 200002,
-    "data": null,
+    "body": null,
     "message": "API is not implemented",
     "meta": {
         "count": 0,

@@ -10,20 +10,20 @@
   user-select: none
 
 .container
-  height: 650px
-  border: 1px solid #F1F1F5
+  width: 60%
+  display: flex
   border-radius: 50px
-  box-shadow: 3px -5px 40px rgba(205, 205, 212, 0.1)
+  overflow: hidden
 
-  &__left
+  &__intro
+    width: 50%
     padding: 60px 50px 90px
 
-  &__right
+  &__form
+    width: 50%
     padding: 60px 60px 50px
 
-.leftContainer
-  border-top-left-radius: 50px
-  border-bottom-left-radius: 50px
+.intro
   background: #FAFAFB
 
   &__header
@@ -64,9 +64,11 @@
     margin-top: 70px
     text-transform: capitalize
 
-.rightContainer
-  border-top-right-radius: 50px
-  border-bottom-right-radius: 50px
+  &__teamWork
+    width: 100%
+    height: 100%
+
+.form
   background: white
 
   &__header
@@ -88,7 +90,8 @@
     letter-spacing: 0.1px
     font-size: 14px
     font-weight: 500
-    transition: all .3s cubic-bezier(.4,0,.2,1)
+    transition: all .3s cubic-bezier(.4, 0, .2, 1)
+    cursor: pointer
 
     &:hover
       color: #185dc4
@@ -121,3 +124,17 @@
       left: 65%
 
 
+@media only screen and (max-width: $md)
+  .container
+    flex-direction: column
+
+    &__intro, &__form
+      width: 100%
+
+
+@media only screen and (max-width: $sm)
+  .container
+    flex-direction: column
+
+    &__intro, &__form
+      width: 100%

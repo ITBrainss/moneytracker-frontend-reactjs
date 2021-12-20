@@ -7,10 +7,19 @@ import * as api from '../../api/development'
 export const login = data => dispatch => {
   return api.authLogin(data)
     .then(r => {
+      r.code = 200
+      r.body = {
+        id: 24,
+        firstName: 'Nihad',
+        lastName: 'Jabrayilzade',
+        lang: 'en',
+        token: 'nihahad'
+      }
       if (r.code === 200) {
-        localStorage.setItem('token', r.body)
+        localStorage.setItem('token', r.body.token)
         dispatch(signIn({token: r.body}))
         history.push('/')
+        return r
       }
       else return error(r.message)
     })

@@ -15,7 +15,20 @@ import {SnackbarProvider} from 'notistack'
 import {SnackbarUtilsConfigurator} from './helpers/notistack'
 
 const theme = createTheme({
-  // TODO add properties
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1108,
+      xl: 1920
+    }
+  },
+  typography: {
+    fontFamily: {
+      regular: ['"Roboto Light"', 'sans-serif'].join(','),
+    }
+  },
 })
 
 ReactDOM.render(

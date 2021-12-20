@@ -14,7 +14,7 @@ export const AuthPage = () => {
 
   const [form, setForm] = React.useState('login') // default - login | reset | register
 
-  const returnFormGrid = () => {
+  const returnAuthForm = () => {
     switch (form) {
       case 'login':
         return <FormLogin/>
@@ -29,37 +29,32 @@ export const AuthPage = () => {
 
   return (
     <div className={sass.root}>
-      <Grid container justifyContent="center">
-        <Grid className={sass.container} container item xs={8}>
-          <Grid className={`${sass.container__left} ${sass.leftContainer}`} xs={6} item>
-            <div className={sass.leftContainer__header}>
-              {LogoSvg}
+      <Grid className={sass.container} container>
+        <Grid className={`${sass.container__intro} ${sass.intro}`} item>
+          <div className={sass.intro__header}>
+            {LogoSvg}
 
-              {form === 'login' && (
-                <Button className={mui.btnReg} onClick={() => setForm('register')}>
-                  {i18next.t('auth.createAccount')}
-                </Button>
-              )}
+            {form === 'login' && (<Button className={mui.btnReg} onClick={() => setForm('register')}>
+              {i18next.t('auth.createAccount')}
+            </Button>)}
 
-              {form === 'register' && (
-                <div className={sass.leftContainer__alreadyHave}>
-                  {i18next.t('auth.alreadyHaveAcc')}
-                  <span onClick={() => setForm('login')}>
-                      {i18next.t('auth.login')}
-                    </span>
-                </div>
-              )}
+            {form === 'register' && (<div className={sass.intro__alreadyHave}>
+              {i18next.t('auth.alreadyHaveAcc')}
 
+              <span onClick={() => setForm('login')}>
+                {i18next.t('auth.login')}
+              </span>
+            </div>)}
+
+          </div>
+          <div className={sass.intro__body}>
+            <div className={sass.intro__teamWork}>{TeamWorkSvg}</div>
+            <div className={sass.intro__promotion}>
+              {i18next.t('auth.promotion')}
             </div>
-            <div className={sass.leftContainer__body}>
-              {TeamWorkSvg}
-              <div className={sass.leftContainer__promotion}>
-                {i18next.t('auth.promotion')}
-              </div>
-            </div>
-          </Grid>
-          {returnFormGrid()}
+          </div>
         </Grid>
+        {returnAuthForm()}
       </Grid>
     </div>
   )

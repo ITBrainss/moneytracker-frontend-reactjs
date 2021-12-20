@@ -18,5 +18,10 @@
     "withGoogle": "Continue with Google",
     "withFb": "Continue with Facebook",
     "alreadyHaveAcc": "already have an account?"
+  },
+  "validation": {
+    "required": "is required",
+    "wrongEmailFormat": "Enter valid email",
+    "passwordsMustMatch": "Passwords must match"
   }
 }
