@@ -1,7 +1,13 @@
 {
   "auth": {
     "login": "Login",
+    "register": "Create an account",
+    "firstName": "first name",
+    "lastName": "last name",
+    "passwordConfirm": "confirm password",
+    "registerText": "create your free account",
     "loginText": "log in to your account",
+    "resetText": "reset your password",
     "createAccount": "create account",
     "promotion": "monitoring your sales anytime. easier & effective than before",
     "email": "email",
@@ -10,6 +16,12 @@
     "forgot": "forgot password?",
     "instantLogin": "instant login",
     "withGoogle": "Continue with Google",
-    "withFb": "Continue with Facebook"
+    "withFb": "Continue with Facebook",
+    "alreadyHaveAcc": "already have an account?"
+  },
+  "validation": {
+    "required": "is required",
+    "wrongEmailFormat": "Enter valid email",
+    "passwordsMustMatch": "Passwords must match"
   }
 }

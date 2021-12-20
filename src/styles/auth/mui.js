@@ -4,12 +4,13 @@ export const useStyles = makeStyles(theme => ({
   btnReg: {
     width: 160,
     height: 50,
-    color: 'blue',
+    color: '#007FFF',
     background: 'white',
     textTransform: 'capitalize',
     borderRadius: 10,
     fontSize: 12,
-    fontWeight: 600
+    fontWeight: 600,
+    transition: 'all .3s cubic-bezier(.4,0,.2,1)',
   },
   btnAction: {
     width: '100%',
@@ -19,20 +20,22 @@ export const useStyles = makeStyles(theme => ({
     textTransform: 'none',
     textAlign: 'center',
     color: 'white',
-    '& svg': {
-      marginRight: 11
-    }
-  },
-  btnLogin: {
-    background: '#007FFF',
     transition: 'all .3s cubic-bezier(.4,0,.2,1)',
+    '& .MuiCircularProgress-root': {
+      color: 'white',
+    },
+    '& svg': {
+      marginRight: '2%'
+    },
+  },
+  btnAuth: {
+    background: '#007FFF',
     '&:hover': {
       background: '#0253a9'
     }
   },
   btnGoogle: {
     background: '#FC5A5A',
-    transition: 'all .3s cubic-bezier(.4,0,.2,1)',
     '&:hover': {
       background: '#941717'
     }
@@ -45,16 +48,12 @@ export const useStyles = makeStyles(theme => ({
   },
   input: {
     height: 60,
+    transition: 'all 0.5 ease',
     '& .MuiInputBase-root': {
       color: '#44444F',
       fontWeight: 400,
       fontSize: 18,
       letterSpacing: 0.1,
-      borderBottom: '1px solid #E2E2EA',
-      transition: 'all .3s cubic-bezier(.4,0,.2,1)',
-      '&:hover': {
-        borderBottom: '1px solid #44444F'
-      }
     },
     textTransform: 'capitalize',
     '& label': {

@@ -1,0 +1,10 @@
+{
+    "code": 200002,
+    "body": null,
+    "message": "API is not implemented",
+    "meta": {
+        "count": 0,
+        "total": 0
+    },
+    "time": "0.02s"
+}
